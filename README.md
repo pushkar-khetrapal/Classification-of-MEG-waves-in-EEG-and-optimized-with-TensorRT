@@ -63,3 +63,16 @@ Confusion Matrix :
 [[7 0 1]
 [1 8 1]
 [0 0 5]]
+
+## How to use
+
+```
+git clone https://github.com/pushkar-khetrapal/Classification-of-MEG-waves-in-EEG-and-optimized-with-TensorRT.git
+cd Classification-of-MEG-waves-in-EEG-and-optimized-with-TensorRT
+sh dep.sh
+python main.py
+```
+
+## Contributing
+
+If you find a bug, create a GitHub issue, or even better, submit a pull request. Similarly, if you have questions, simply post them as GitHub issues.
