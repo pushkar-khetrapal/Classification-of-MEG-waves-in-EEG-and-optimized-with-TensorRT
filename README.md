@@ -21,19 +21,22 @@ electrode placement : 10-20 System
 I developed a hybrid 1-D Convolutional Neural Network with 10 electrodes (AF3, F7, F3, FC5, T7, T8, FC6, F4, F8, AF4), since given task is to classify eye blinking and jaw clenching. The most affected area of blinking is frontal area so we are using Frontal electrodes (Af3, F7, F3, F4, F8, Af4) to measure the variation in voltage. And for jaw clenching the most variation in voltage found in Central electrodes(T7, Fc5, Fc6, T8).
 
 ## Preprocessing EEG
-1). Setting the baseline by taking the average of first 30 seconds of recording (Individual channel).
-2). Extracting 0.5 second window (-0.2 to 0.3 of induction) i.e, 64 sampling points
-3). Subtracting the baseline.
-4). Extracting frequencies of range 1-50 Hz using Band pass filter. The given task is related to muscles movement and this affects all the frequencies with great amplitude. But for more variation has seen in 1-50 Hz.
-5). After refining the EEG further I take PSD of wave because lately I'm performing EEG classification task and I found PSD is one of the best feature of wave to get more accuracy.
-6). Seperating data into 2 sets training and testing. Since the data is small, the division is done in 0.8:0.2 ratio.
-7). Standardizing the given training waves and transforming the testing waves.
-6). After extraction of features, seperating and standardizing the EEG wave. We have 4 variables :
+1. Setting the baseline by taking the average of first 30 seconds of recording (Individual channel).
+2. Extracting 0.5 second window (-0.2 to 0.3 of induction) i.e, 64 sampling points
+3. Subtracting the baseline.
+4. Extracting frequencies of range 1-50 Hz using Band pass filter. The given task is related to muscles movement and this affects all the frequencies with great amplitude. But for more variation has seen in 1-50 Hz.
+5. After refining the EEG further I take PSD of wave because lately I'm performing EEG classification task and I found PSD is one of the best feature of wave to get more accuracy.
+6. Seperating data into 2 sets training and testing. Since the data is small, the division is done in 0.8:0.2 ratio.
+7. Standardizing the given training waves and transforming the testing waves.
+6. After extraction of features, seperating and standardizing the EEG wave. We have 4 variables :
+
+```
 Variable Shape
 x_train_new - (10, 91, 64, 1) - 10 electrodes, 91 total examples for training, 64 sampling points
 x_test_new - (10, 23, 64, 1) - 10 electrodes, 23 total examples for testing, 64 sampling points
 y_train - (91, 3) - 91 total examples for training, 3 classes
 y_test - (23, 3) - 23 total examples for testing, 3 classes
+```
 
 ## Deep Learning Model
 
