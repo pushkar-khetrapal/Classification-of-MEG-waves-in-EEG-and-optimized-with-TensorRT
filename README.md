@@ -13,9 +13,9 @@ electrode placement : 10-20 System
 (Note : This code is demo of brainwave classification using tensorflow, the priority of this notebook is to develop fast, optimized inference and accuracy. The model overfits due to less training data.)
 ```
 ## Achievements
-1). Extracted features from given EEG signal.
-2). Developed 1-D Hybrid Convolutional Neural Network with 10-inputs -- 1-output.
-3). Optimized inference by 6.22x of normal tensorflow model.
+1. Extracted features from given EEG signal.
+2. Developed 1-D Hybrid Convolutional Neural Network with 10-inputs -- 1-output.
+3. Optimized inference by 6.22x of normal tensorflow model.
 
 ## Approach
 I developed a hybrid 1-D Convolutional Neural Network with 10 electrodes (AF3, F7, F3, FC5, T7, T8, FC6, F4, F8, AF4), since given task is to classify eye blinking and jaw clenching. The most affected area of blinking is frontal area so we are using Frontal electrodes (Af3, F7, F3, F4, F8, Af4) to measure the variation in voltage. And for jaw clenching the most variation in voltage found in Central electrodes(T7, Fc5, Fc6, T8).
